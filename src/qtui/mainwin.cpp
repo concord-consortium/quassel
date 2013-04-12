@@ -1059,12 +1059,12 @@ void MainWin::setConnectedState()
     }
     else {
         // Monolithic always preselects last used buffer - Client only if the connection died
-        if (Client::coreConnection()->wasReconnect() || Quassel::runMode() == Quassel::Monolithic) {
+        // if (Client::coreConnection()->wasReconnect() || Quassel::runMode() == Quassel::Monolithic) {
             QtUiSettings s;
             BufferId lastUsedBufferId(s.value("LastUsedBufferId").toInt());
             if (lastUsedBufferId.isValid())
                 Client::bufferModel()->switchToBuffer(lastUsedBufferId);
-        }
+        // }
     }
 }
 
